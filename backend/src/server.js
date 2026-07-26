@@ -31,7 +31,7 @@ app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
 app.use(express.json({ limit: "2mb" }));
 app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.json({ message: "Global Connect API is running" });
 });
 
