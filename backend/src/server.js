@@ -21,13 +21,13 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: "*",
     methods: ["GET", "POST"]
   }
 });
 
 app.set("io", io);
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
+app.use(cors({ origin: "*" }));
 app.use(express.json({ limit: "2mb" }));
 app.use(morgan("dev"));
 
